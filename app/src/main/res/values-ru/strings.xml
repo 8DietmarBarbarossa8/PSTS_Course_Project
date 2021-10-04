@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Студенты</string>
+
+    <string name="adding_label">Добавить нового студента</string>
+    <string name="editing_label">Редактировать студента</string>
+    <string name="sorting_label">Сортировать по</string>
+    <string name="setting_label">Настройки</string>
+
+    <string name="student_name_hint">Введите имя</string>
+    <string name="student_age_hint">Введите возраст</string>
+    <string name="student_rating_hint">Введите рейтинг</string>
+
+    <string name="_name">Имя:</string>
+    <string name="_age">Возраст:</string>
+    <string name="_rating">Рейтинг:</string>
+
+    <string name="name">имени</string>
+    <string name="age">возрасту</string>
+    <string name="rating">рейтингу</string>
+
+    <string name="add">Добавить</string>
+    <string name="delete">Удалить</string>
+
+    <string name="input_error_notification">Неверный ввод данных!</string>
+    <string name="adding_notification">Студент добавлен в базу данных!</string>
+    <string name="deleting_notification">Студент удален из базы данных!</string>
+</resources>

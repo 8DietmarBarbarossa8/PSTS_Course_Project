@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Students</string>
+
+    <string name="adding_label">Add new student</string>
+    <string name="editing_label">Edit student</string>
+    <string name="sorting_label">Sort by</string>
+    <string name="setting_label">Settings</string>
+
+    <string name="student_name_hint">Enter name</string>
+    <string name="student_age_hint">Enter age</string>
+    <string name="student_rating_hint">Enter rating</string>
+
+    <string name="_name">Name:</string>
+    <string name="_age">Age:</string>
+    <string name="_rating">Rating:</string>
+
+    <string name="name">name</string>
+    <string name="age">age</string>
+    <string name="rating">rating</string>
+
+    <string name="add">Add</string>
+    <string name="delete">Delete</string>
+
+    <string name="input_error_notification"> Invalid data input!</string>
+    <string name="adding_notification">Student added in database!</string>
+    <string name="deleting_notification">Student deleted in database!</string>
+</resources>

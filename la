@@ -1,0 +1,86 @@
+[33mcommit 012a9e506dbcea60423acdd15402fb602435e104[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Dietmar <tcodmos@gmail.com>
+Date:   Wed Sep 15 23:33:28 2021 +0300
+
+    correct editing data
+
+[33mcommit 90e2ff138c0454cbb3806114ff437ef092ae64a5[m
+Author: Dietmar <tcodmos@gmail.com>
+Date:   Wed Sep 15 20:05:21 2021 +0300
+
+    Language correct
+
+[33mcommit ea9c75c34846aa5078e233291e07d636e403c524[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: aa5f49e e98b137
+Author: 8DietmarBarbarossa8 <71211299+8DietmarBarbarossa8@users.noreply.github.com>
+Date:   Wed Sep 15 18:44:52 2021 +0300
+
+    Merge pull request #1 from 8DietmarBarbarossa8/hotfix
+    
+    Hotfix
+
+[33mcommit e98b137b1d1303117585800d1a71d6be3e8106a1[m[33m ([m[1;31morigin/hotfix[m[33m)[m
+Author: Dietmar <tcodmos@gmail.com>
+Date:   Wed Sep 15 18:10:56 2021 +0300
+
+    Student storage app
+
+[33mcommit ab31e724eb813542fe0d513abfc61ff3dcf3c755[m
+Author: Dietmar <tcodmos@gmail.com>
+Date:   Mon Sep 13 15:40:20 2021 +0300
+
+    add switch DBSM
+
+[33mcommit 7263f35b1c780e50bf01f906d90ea4d6d24cc4ec[m
+Author: Dietmar <tcodmos@gmail.com>
+Date:   Thu Sep 9 22:37:49 2021 +0300
+
+    great shitcode
+
+[33mcommit aa5f49ed43a18e311f144df67253226cdacab2cc[m
+Author: Dietmar <tcodmos@gmail.com>
+Date:   Thu Sep 9 12:08:56 2021 +0300
+
+    created app
+
+[33mcommit 745bd453fef660960ebed3ab3a64569abb70bf69[m
+Author: Artem Bagritsevich <artem.bagritsevich@gmail.com>
+Date:   Sat Aug 28 16:36:31 2021 +0300
+
+    Update README.md
+
+[33mcommit 2abaa4551e1d8f8f5fb44e0335bb2591b44c8876[m
+Author: Artem Bagritsevich <artem.bagritsevich@gmail.com>
+Date:   Thu Jun 18 15:02:54 2020 +0300
+
+    Update README.md
+
+[33mcommit 8e4db172c3373bac8458aba2789eef73994cb3da[m
+Author: Artem Bagritsevich <artem.bagritsevich@gmail.com>
+Date:   Thu Jun 18 14:51:15 2020 +0300
+
+    Update README.md
+
+[33mcommit 62190ca289a9363f43c507dd364afcec16a007b8[m
+Author: Artem Bagritsevich <artem.bagritsevich@gmail.com>
+Date:   Thu Jun 18 14:50:44 2020 +0300
+
+    Update README.md
+
+[33mcommit f54f18f73c776121794a482fece4e467ce0c835a[m
+Author: Artem Bagritsevich <artem.bagritsevich@gmail.com>
+Date:   Thu Jun 18 14:50:27 2020 +0300
+
+    Update README.md
+
+[33mcommit f71caedcc42c45516b2b221f374fb47e471f9b56[m
+Author: Artem Bagritsevich <artem.bagritsevich@gmail.com>
+Date:   Thu Jun 18 14:44:28 2020 +0300
+
+    Update README.md
+
+[33mcommit 978505ae07e048103077dbc355f369c6593aed33[m
+Author: Artem Bagritsevich <artem_bagirtsevich@epam.com>
+Date:   Thu Jun 18 14:41:51 2020 +0300
+
+    initial commit
