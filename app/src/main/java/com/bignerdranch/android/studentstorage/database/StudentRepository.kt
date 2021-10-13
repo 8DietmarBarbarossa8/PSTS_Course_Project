@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.room.Room
 import com.bignerdranch.android.studentstorage.model.Student
+import com.google.firebase.database.FirebaseDatabase
 import java.util.concurrent.Executors
 
 class StudentRepository private constructor(context: Context) {
@@ -17,6 +18,8 @@ class StudentRepository private constructor(context: Context) {
         get() = database.studentDao()
 
     private val executor = Executors.newSingleThreadExecutor()
+
+    private val firebase = FirebaseDatabase.getInstance().getReference(STUDENT_KEY)
 
     fun getStudent(id: Int): LiveData<Student?> = studentDao.getStudent(id)
 
@@ -32,6 +35,8 @@ class StudentRepository private constructor(context: Context) {
         executor.execute {
             studentDao.addStudent(student)
         }
+//        student.id = firebase.key.toString().toIntOrNull() ?: 0
+        firebase.push().setValue(student)
     }
 
     fun deleteStudent(student: Student) {
@@ -42,16 +47,16 @@ class StudentRepository private constructor(context: Context) {
 
     companion object {
         private const val DATABASE_NAME = "Student-database"
+        private const val STUDENT_KEY = "STUDENT_DB"
+
         private var INSTANCE: StudentRepository? = null
 
         fun initialize(context: Context) {
-            if (INSTANCE == null) {
-                INSTANCE = StudentRepository(context)
-            }
+            if (INSTANCE == null) INSTANCE = StudentRepository(context)
         }
 
         fun get(): StudentRepository {
-            return INSTANCE ?: throw IllegalStateException("StudentRepository must be initialized")
+            return INSTANCE ?: throw IllegalStateException("Repository must be initialized")
         }
     }
 }

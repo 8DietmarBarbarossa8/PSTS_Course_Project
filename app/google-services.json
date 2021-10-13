@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "248193758302",
+    "firebase_url": "https://students-920cb-default-rtdb.firebaseio.com",
+    "project_id": "students-920cb",
+    "storage_bucket": "students-920cb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:248193758302:android:c61506fc6c2872e39a30cf",
+        "android_client_info": {
+          "package_name": "com.bignerdranch.android.criminalintent"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "248193758302-apifsdj3oj8k7mjgnkfdoudppavdru33.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVQST80oQXk-l7ZVtzt2BG-cgu2-3w3K8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "248193758302-apifsdj3oj8k7mjgnkfdoudppavdru33.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
