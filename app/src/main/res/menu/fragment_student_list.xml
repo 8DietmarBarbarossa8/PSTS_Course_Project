@@ -5,7 +5,7 @@
 
     <item
         android:id="@+id/sorting_student"
-        android:icon="@drawable/ic_baseline_filter_alt_24"
+        android:icon="@drawable/ic_baseline_settings_24"
         app:showAsAction="ifRoom|withText"
         tools:ignore="MenuTitle" />
 </menu>

@@ -3,7 +3,6 @@
 
     <string name="adding_label">Add new student</string>
     <string name="editing_label">Edit student</string>
-    <string name="sorting_label">Sort by</string>
     <string name="setting_label">Settings</string>
 
     <string name="student_name_hint">Enter name</string>
@@ -24,4 +23,8 @@
     <string name="input_error_notification"> Invalid data input!</string>
     <string name="adding_notification">Student added in database!</string>
     <string name="deleting_notification">Student deleted in database!</string>
+
+    <string name="sort">Sort by</string>
+    <string name="contact">You can contact me by clicking on the button</string>
+    <string name="phone" translatable="false">+375298098815</string>
 </resources>

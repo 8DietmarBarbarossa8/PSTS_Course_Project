@@ -57,7 +57,7 @@ class StudentListFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.sorting_student -> {
-                callbacks?.onSortSelected()
+                callbacks?.onSettings()
                 true
             }
             else -> return super.onOptionsItemSelected(item)

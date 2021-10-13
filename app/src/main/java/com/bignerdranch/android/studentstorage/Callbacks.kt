@@ -3,6 +3,6 @@ package com.bignerdranch.android.studentstorage
 interface Callbacks {
     fun onCreateNewStudent()
     fun onStudentSelected(studentID: Int)
-    fun onSortSelected()
+    fun onSettings()
     fun onMainScreen(sortingMode: String = "")
 }

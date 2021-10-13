@@ -6,7 +6,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.bignerdranch.android.studentstorage.fragments.StudentFragment
 import com.bignerdranch.android.studentstorage.fragments.StudentListFragment
-import com.bignerdranch.android.studentstorage.fragments.StudentSortingFragment
+import com.bignerdranch.android.studentstorage.fragments.StudentSettingsFragment
 
 class MainActivity : AppCompatActivity(), Callbacks {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,9 +34,9 @@ class MainActivity : AppCompatActivity(), Callbacks {
         startFragment(StudentFragment.newInstance(studentID))
     }
 
-    override fun onSortSelected() {
-        this.setTitle(R.string.sorting_label)
-        startFragment(StudentSortingFragment.newInstance())
+    override fun onSettings() {
+        this.setTitle(R.string.setting_label)
+        startFragment(StudentSettingsFragment.newInstance())
     }
 
     private fun startFragment(fragment: Fragment) {
