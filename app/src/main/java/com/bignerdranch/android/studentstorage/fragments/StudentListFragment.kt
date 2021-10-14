@@ -94,6 +94,7 @@ class StudentListFragment : Fragment() {
         private val nameTextView: TextView = itemView.findViewById(R.id.name_student)
         private val ageTextView: TextView = itemView.findViewById(R.id.age_student)
         private val ratingTextView: TextView = itemView.findViewById(R.id.rating_student)
+        private val creationDateTextView: TextView = itemView.findViewById(R.id.creation_date_text)
 
         init {
             itemView.setOnClickListener(this)
@@ -104,6 +105,7 @@ class StudentListFragment : Fragment() {
             nameTextView.text = this.student.name
             ageTextView.text = this.student.age.toString()
             ratingTextView.text = this.student.rating.toString()
+            creationDateTextView.text = this.student.date.toString()
         }
 
         override fun onClick(v: View) {
@@ -121,8 +123,7 @@ class StudentListFragment : Fragment() {
         }
 
         override fun onBindViewHolder(holder: StudentHolder, position: Int) {
-            val student = students[position]
-            holder.bind(student)
+            holder.bind(students[position])
         }
 
         override fun getItemCount() = students.size

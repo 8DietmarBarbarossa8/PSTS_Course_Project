@@ -3,11 +3,12 @@ package com.bignerdranch.android.studentstorage.database
 import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.bignerdranch.android.studentstorage.model.Student
+import java.util.*
 
 @Dao
 interface StudentDao {
     @Query("SELECT * FROM student WHERE id=(:id)")
-    fun getStudent(id: Int): LiveData<Student?>
+    fun getStudent(id: UUID): LiveData<Student?>
 
     @Query(
         "SELECT * FROM Student ORDER BY " +

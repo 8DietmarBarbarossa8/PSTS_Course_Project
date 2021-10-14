@@ -12,6 +12,7 @@
     <string name="_name">Name:</string>
     <string name="_age">Age:</string>
     <string name="_rating">Rating:</string>
+    <string name="_date">Creation date:</string>
 
     <string name="name">name</string>
     <string name="age">age</string>

@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentManager
 import com.bignerdranch.android.studentstorage.fragments.StudentFragment
 import com.bignerdranch.android.studentstorage.fragments.StudentListFragment
 import com.bignerdranch.android.studentstorage.fragments.StudentSettingsFragment
+import java.util.*
 
 class MainActivity : AppCompatActivity(), Callbacks {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,7 +30,7 @@ class MainActivity : AppCompatActivity(), Callbacks {
         startFragment(StudentFragment.newInstance())
     }
 
-    override fun onStudentSelected(studentID: Int) {
+    override fun onStudentSelected(studentID: UUID) {
         this.setTitle(R.string.editing_label)
         startFragment(StudentFragment.newInstance(studentID))
     }

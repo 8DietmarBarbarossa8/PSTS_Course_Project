@@ -16,6 +16,7 @@ import com.bignerdranch.android.studentstorage.Callbacks
 import com.bignerdranch.android.studentstorage.R
 import com.bignerdranch.android.studentstorage.model.Student
 import com.bignerdranch.android.studentstorage.viewmodel.StudentDetailViewModel
+import java.util.*
 
 class StudentFragment : Fragment() {
     private lateinit var nameStudent: EditText
@@ -60,7 +61,7 @@ class StudentFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val studentId = arguments?.getSerializable(ARG_STUDENT_ID) as Int?
+        val studentId = arguments?.getSerializable(ARG_STUDENT_ID) as UUID?
 
         if (studentId == null) addStudent()
         else {
@@ -100,7 +101,7 @@ class StudentFragment : Fragment() {
             val age = ageStudent.text.toString().toIntOrNull()
             val rating = ratingStudent.text.toString().toFloatOrNull()
             if (name.isNotEmpty() && age != null && rating != null) {
-                student = Student(name = name, age = age, rating = rating)
+                student = Student(UUID.randomUUID(), name, age, rating, Date())
                 studentDetailViewModel.addStudent(student)
                 Toast.makeText(context, R.string.adding_notification, Toast.LENGTH_SHORT).show()
                 snapBackToReality()
@@ -143,8 +144,8 @@ class StudentFragment : Fragment() {
         private const val ARG_STUDENT_ID = "student_id"
 
         @JvmStatic
-        fun newInstance(studentId: Int): StudentFragment {
-            val args = Bundle().apply { putInt(ARG_STUDENT_ID, studentId) }
+        fun newInstance(studentId: UUID): StudentFragment {
+            val args = Bundle().apply { putSerializable(ARG_STUDENT_ID, studentId) }
             return StudentFragment().apply { arguments = args }
         }
 

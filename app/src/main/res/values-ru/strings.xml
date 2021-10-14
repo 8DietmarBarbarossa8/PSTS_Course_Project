@@ -12,6 +12,7 @@
     <string name="_name">Имя:</string>
     <string name="_age">Возраст:</string>
     <string name="_rating">Рейтинг:</string>
+    <string name="_date">Дата создания:</string>
 
     <string name="name">имени</string>
     <string name="age">возрасту</string>

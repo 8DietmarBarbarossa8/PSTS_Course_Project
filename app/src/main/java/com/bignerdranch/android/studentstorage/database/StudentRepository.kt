@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.room.Room
 import com.bignerdranch.android.studentstorage.model.Student
 import com.google.firebase.database.FirebaseDatabase
+import java.util.*
 import java.util.concurrent.Executors
 
 class StudentRepository private constructor(context: Context) {
@@ -19,9 +20,9 @@ class StudentRepository private constructor(context: Context) {
 
     private val executor = Executors.newSingleThreadExecutor()
 
-    private val firebase = FirebaseDatabase.getInstance().getReference(STUDENT_KEY)
+    private val firebase = FirebaseDatabase.getInstance()
 
-    fun getStudent(id: Int): LiveData<Student?> = studentDao.getStudent(id)
+    fun getStudent(id: UUID): LiveData<Student?> = studentDao.getStudent(id)
 
     fun getStudents(sortMode: String): LiveData<List<Student>> = studentDao.getStudents(sortMode)
 
@@ -35,19 +36,20 @@ class StudentRepository private constructor(context: Context) {
         executor.execute {
             studentDao.addStudent(student)
         }
-//        student.id = firebase.key.toString().toIntOrNull() ?: 0
-        firebase.push().setValue(student)
+        student.pathKey = firebase.reference.push().key ?: ""
+        firebase.reference.child(PATH_KEY_STUDENT).child(student.pathKey).setValue(student)
     }
 
     fun deleteStudent(student: Student) {
         executor.execute {
             studentDao.deleteStudent(student)
         }
+        firebase.reference.child(PATH_KEY_STUDENT).child(student.pathKey).removeValue()
     }
 
     companion object {
         private const val DATABASE_NAME = "Student-database"
-        private const val STUDENT_KEY = "STUDENT_DB"
+        private const val PATH_KEY_STUDENT = "STUDENT_DB"
 
         private var INSTANCE: StudentRepository? = null
 
