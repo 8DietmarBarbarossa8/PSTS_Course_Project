@@ -20,6 +20,7 @@
 
     <string name="add">Add</string>
     <string name="delete">Delete</string>
+    <string name="neutral">Back</string>
 
     <string name="input_error_notification"> Invalid data input!</string>
     <string name="adding_notification">Student added in database!</string>
@@ -28,4 +29,5 @@
     <string name="sort">Sort by</string>
     <string name="contact">You can contact me by clicking on the button</string>
     <string name="phone" translatable="false">+375298098815</string>
+    <string name="exit">Exit</string>
 </resources>

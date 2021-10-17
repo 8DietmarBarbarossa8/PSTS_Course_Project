@@ -17,10 +17,13 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.bignerdranch.android.studentstorage.Callbacks
 import com.bignerdranch.android.studentstorage.R
+import kotlin.system.exitProcess
 
 class StudentSettingsFragment : Fragment() {
     private var buttons: Array<Button?> = Array(3) { null }
     private lateinit var contactButton: Button
+    private lateinit var backButton: Button
+    private lateinit var exitButton: Button
     private var callbacks: Callbacks? = null
 
     override fun onAttach(context: Context) {
@@ -57,6 +60,16 @@ class StudentSettingsFragment : Fragment() {
         contactButton.setOnClickListener {
             if (isCallPermissionGranted()) callMe()
             else requestCallPermission()
+        }
+
+        backButton = view.findViewById(R.id.neutral_button)
+        backButton.setOnClickListener {
+            callbacks?.onMainScreen()
+        }
+
+        exitButton = view.findViewById(R.id.exit_button)
+        exitButton.setOnClickListener {
+            exitProcess(0)
         }
     }
 

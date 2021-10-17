@@ -30,6 +30,7 @@ class StudentRepository private constructor(context: Context) {
         executor.execute {
             studentDao.updateStudent(student)
         }
+        firebase.reference.child(PATH_KEY_STUDENT).child(student.pathKey).setValue(student)
     }
 
     fun addStudent(student: Student) {

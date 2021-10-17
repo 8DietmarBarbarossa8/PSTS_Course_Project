@@ -23,12 +23,12 @@ class StudentFragment : Fragment() {
     private lateinit var ageStudent: EditText
     private lateinit var ratingStudent: EditText
     private lateinit var functionalButton: Button
+    private lateinit var neutralButton: Button
     private val studentDetailViewModel: StudentDetailViewModel by lazy {
         ViewModelProviders.of(this).get(StudentDetailViewModel::class.java)
     }
     private var student: Student = Student()
     private var callbacks: Callbacks? = null
-    private var mayEditStudentData = false
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -38,8 +38,8 @@ class StudentFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         requireActivity().onBackPressedDispatcher.addCallback(this) {
-            if (mayEditStudentData)
-                correctStudentData()
+            if (correctStudentData())
+                studentDetailViewModel.saveStudent(student)
             snapBackToReality()
         }
     }
@@ -55,6 +55,7 @@ class StudentFragment : Fragment() {
         ageStudent = view.findViewById(R.id.age_student) as EditText
         ratingStudent = view.findViewById(R.id.rating_student) as EditText
         functionalButton = view.findViewById(R.id.add_button) as Button
+        neutralButton = view.findViewById(R.id.neutral_button) as Button
 
         return view
     }
@@ -65,7 +66,6 @@ class StudentFragment : Fragment() {
 
         if (studentId == null) addStudent()
         else {
-            mayEditStudentData = true
             functionalButton.text = resources.getString(R.string.delete)
             functionalButton.background = ResourcesCompat
                 .getDrawable(resources, R.drawable.deleting_button_border, null)
@@ -86,6 +86,12 @@ class StudentFragment : Fragment() {
                 Toast.makeText(context, R.string.deleting_notification, Toast.LENGTH_SHORT).show()
                 snapBackToReality()
             }
+        }
+
+        neutralButton.setOnClickListener {
+            if (correctStudentData())
+                studentDetailViewModel.saveStudent(student)
+            snapBackToReality()
         }
     }
 
@@ -112,7 +118,8 @@ class StudentFragment : Fragment() {
         }
     }
 
-    private fun correctStudentData() {
+    private fun correctStudentData(): Boolean {
+        val student = Student()
         student.name = nameStudent.text.toString()
         student.age = try {
             ageStudent.text.toString().toInt()
@@ -124,15 +131,22 @@ class StudentFragment : Fragment() {
         } catch (e: Exception) {
             student.rating
         }
+
+        if (!(this.student.name == student.name &&
+                    this.student.age == student.age &&
+                    this.student.rating == student.rating)
+        ) {
+            this.student.name = student.name
+            this.student.age = student.age
+            this.student.rating = student.rating
+            return true
+        }
+
+        return false
     }
 
     private fun snapBackToReality() {
         callbacks?.onMainScreen()
-    }
-
-    override fun onStop() {
-        super.onStop()
-        studentDetailViewModel.saveStudent(student)
     }
 
     override fun onDetach() {

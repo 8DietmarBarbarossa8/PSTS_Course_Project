@@ -20,6 +20,7 @@
 
     <string name="add">Добавить</string>
     <string name="delete">Удалить</string>
+    <string name="neutral">Назад</string>
 
     <string name="input_error_notification">Неверный ввод данных!</string>
     <string name="adding_notification">Студент добавлен в базу данных!</string>
@@ -27,4 +28,5 @@
 
     <string name="sort">Сортировать по</string>
     <string name="contact">Вы можете связаться со мной, кликнув по кнопке</string>
+    <string name="exit">Выйти</string>
 </resources>
