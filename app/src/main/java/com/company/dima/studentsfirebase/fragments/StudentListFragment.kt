@@ -8,6 +8,7 @@ import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.company.dima.studentsfirebase.inter_face.Callbacks
 import com.company.dima.studentsfirebase.R
 import com.company.dima.studentsfirebase.model.Student
@@ -66,15 +67,24 @@ class StudentListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val swipeRefreshLayout: SwipeRefreshLayout = view.findViewById(R.id.refresh)
+        swipeRefreshLayout.setOnRefreshListener {
+            callbacks?.onMainScreen()
+        }
+
         StudentFirebase.reference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 for (ds in dataSnapshot.children)
                     try {
-                        StudentFirebase.students.add(requireNotNull(ds.getValue(Student::class.java)))
+                        StudentFirebase
+                            .students.add(requireNotNull(ds.getValue(Student::class.java)))
                     } catch (e: Exception) {
                         continue
                     }
 
+                val set = HashSet<Student>(StudentFirebase.students)
+                StudentFirebase.students.clear()
+                StudentFirebase.students.addAll(set)
                 StudentFirebase.sortStudents(requireNotNull(arguments?.getString(SORTING_MODE)))
                 adapter.students = StudentFirebase.students
                 studentRecyclerView.adapter = adapter

@@ -27,7 +27,7 @@ object StudentFirebase {
         when (sortMode) {
             "name" -> students.sortBy { it.name }
             "age" -> students.sortBy { it.age }
-            "rating" -> students.sortBy { it.rating }
+            "rating" -> students.sortBy { 1.0 / it.rating }
             else -> students.sortBy { it.pathKey }
         }
     }

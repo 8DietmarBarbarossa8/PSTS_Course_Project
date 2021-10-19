@@ -33,7 +33,7 @@ class StudentFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        requireActivity().onBackPressedDispatcher.addCallback(this){
+        requireActivity().onBackPressedDispatcher.addCallback(this) {
             if (correctStudentData())
                 StudentFirebase.updateStudent(student)
             snapBackToReality()
@@ -63,7 +63,8 @@ class StudentFragment : Fragment() {
         if (studentPathKey != null) {
             try {
                 student = StudentFirebase.students.find { it.pathKey == studentPathKey }!!
-            } catch (e: Exception) {}
+            } catch (e: Exception) {
+            }
 
             functionalButton.text = resources.getString(R.string.delete)
             functionalButton.background = ResourcesCompat
