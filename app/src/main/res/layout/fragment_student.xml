@@ -54,7 +54,7 @@
         app:layout_constraintTop_toBottomOf="@+id/age_student"
         tools:ignore="Autofill" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/add_button"
         android:layout_width="199dp"
         android:layout_height="65dp"
@@ -68,7 +68,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rating_student" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/neutral_button"
         android:layout_width="199dp"
         android:layout_height="65dp"

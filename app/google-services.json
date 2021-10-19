@@ -34,6 +34,35 @@
           ]
         }
       }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:248193758302:android:ac3265fa55898b049a30cf",
+        "android_client_info": {
+          "package_name": "com.company.dima.studentsfirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "248193758302-apifsdj3oj8k7mjgnkfdoudppavdru33.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVQST80oQXk-l7ZVtzt2BG-cgu2-3w3K8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "248193758302-apifsdj3oj8k7mjgnkfdoudppavdru33.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
     }
   ],
   "configuration_version": "1"

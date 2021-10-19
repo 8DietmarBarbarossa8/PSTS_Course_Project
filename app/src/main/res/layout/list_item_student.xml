@@ -85,16 +85,4 @@
         app:layout_constraintTop_toBottomOf="@+id/age_student"
         tools:text="some rating" />
 
-    <TextView
-        android:id="@+id/creation_date_text"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/montserrat"
-        android:textColor="@android:color/white"
-        android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rating_student"
-        tools:text="some date" />
 </androidx.constraintlayout.widget.ConstraintLayout>
