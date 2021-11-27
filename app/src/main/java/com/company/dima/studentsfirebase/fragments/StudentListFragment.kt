@@ -4,6 +4,7 @@ import android.content.Context
 import android.os.Bundle
 import android.view.*
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -90,7 +91,9 @@ class StudentListFragment : Fragment() {
                 studentRecyclerView.adapter = adapter
             }
 
-            override fun onCancelled(databaseError: DatabaseError) {}
+            override fun onCancelled(databaseError: DatabaseError) {
+                Toast.makeText(context, "$databaseError", Toast.LENGTH_SHORT).show()
+            }
         })
 
         addingButton = view.findViewById(R.id.floatingActionButton)

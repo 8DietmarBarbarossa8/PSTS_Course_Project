@@ -97,9 +97,9 @@ class StudentSettingsFragment : Fragment() {
     }
 
     private fun callMe() {
-        val callUri = Uri.parse("tel://${resources.getString(R.string.phone)}")
-        val callIntent = Intent(Intent.ACTION_CALL, callUri)
-        startActivity(callIntent)
+        val dial = "tel: +${resources.getString(R.string.phone)}"
+        val intent = Intent(Intent.ACTION_DIAL, Uri.parse(dial))
+        startActivity(intent)
     }
 
     override fun onDetach() {
